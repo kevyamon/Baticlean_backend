@@ -1,8 +1,6 @@
 language = "nodejs"
-# Cette commande lance le backend en premier, puis le frontend dans un deuxième temps.
-run = "npm start & (cd frontend && npm install && npm start)"
-modules = ["nodejs-20"]
+run = "cd frontend && npm install && npm start"
 
 [[ports]]
 localPort = 3001
-externalPort = 80
+externalPort =80
