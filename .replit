@@ -1,6 +1,5 @@
 language = "nodejs"
 run = "cd frontend && npm install && npm start"
-modules = ["nodejs-20"]
 
 [[ports]]
 localPort = 3001
