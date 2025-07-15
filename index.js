@@ -3,16 +3,21 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
+// Importer les routes
+const userRoutes = require('./routes/userRoutes.js');
+
 const app = express();
 
 // Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Route de test
+// Routes principales
 app.get('/', (req, res) => {
   res.send('API BATIClean sur Replit est fonctionnelle !');
 });
+app.use('/api/users', userRoutes);
+
 
 const PORT = process.env.PORT || 3001;
 
@@ -25,5 +30,4 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch((err) => {
     console.error('Erreur de connexion à MongoDB :', err.message);
-    process.exit(1); // Arrête le processus en cas d'échec de connexion
   });
